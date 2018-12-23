@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Collector
 {
-    class Attribute
+   public class Attribute
     {
         public string name { get; set; }
         public string type { get; set; }
