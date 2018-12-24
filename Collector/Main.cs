@@ -18,12 +18,14 @@ namespace Collector
         private CustomCollection selectedCollection;
 
         private DatabaseController dbc;
+        private AddCollection addCollection;
+        private EditCollection editCollection;
 
         public Main()
         {
             InitializeComponent();
             dbc = new DatabaseController();
-
+            
             collectionPanel.Hide();
 
             updateCollectionList();
@@ -37,7 +39,9 @@ namespace Collector
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //show collection form
+            addCollection = new AddCollection(this);
+            addCollection.ControlBox = false;
+            addCollection.Show();
 
         }
 
@@ -55,6 +59,7 @@ namespace Collector
             collectionPanel.Show();
 
             selectedCollection = collection;
+            
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView1.Update();
@@ -72,6 +77,8 @@ namespace Collector
                 fieldSelectionBox.Items.Add(attr.name);
                 dt.Columns.Add(attr.name);
             }
+
+            fieldSelectionBox.SelectedItem = collection.attributes[0].name;
 
             foreach (dynamic item in itemList)
             {
@@ -129,8 +136,10 @@ namespace Collector
 
         private void buttonEditCollection_Click(object sender, EventArgs e)
         {
-           //show edit collection form
-
+            editCollection = new EditCollection(this, selectedCollection);
+            editCollection.ControlBox = false;
+            editCollection.Show();
+       
         }
 
         private void buttonAddItem_Click(object sender, EventArgs e)

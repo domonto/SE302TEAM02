@@ -52,9 +52,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCollection.designer.cs">
+      <DependentUpon>AddCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Attribute.cs" />
     <Compile Include="CustomCollection.cs" />
     <Compile Include="DatabaseController.cs" />
+    <Compile Include="EditCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCollection.designer.cs">
+      <DependentUpon>EditCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCollection.resx">
+      <DependentUpon>AddCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCollection.resx">
+      <DependentUpon>EditCollection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
