@@ -58,6 +58,12 @@
     <Compile Include="AddCollection.designer.cs">
       <DependentUpon>AddCollection.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItem.designer.cs">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Attribute.cs" />
     <Compile Include="CustomCollection.cs" />
     <Compile Include="DatabaseController.cs" />
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="EditCollection.designer.cs">
       <DependentUpon>EditCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditItem.designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -78,8 +90,14 @@
     <EmbeddedResource Include="AddCollection.resx">
       <DependentUpon>AddCollection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCollection.resx">
       <DependentUpon>EditCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

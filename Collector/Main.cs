@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +15,21 @@ namespace Collector
 {
     public partial class Main : Form
     {
-        
+        private AddCollection addCollectionForm;
+        private EditCollection editCollection;
+
         private CustomCollection selectedCollection;
 
+        private AddItem addItem;
+        private EditItem editItem;
+
         private DatabaseController dbc;
-        private AddCollection addCollection;
-        private EditCollection editCollection;
 
         public Main()
         {
             InitializeComponent();
             dbc = new DatabaseController();
-            
+
             collectionPanel.Hide();
 
             updateCollectionList();
@@ -39,10 +43,10 @@ namespace Collector
 
         private void button1_Click(object sender, EventArgs e)
         {
-            addCollection = new AddCollection(this);
-            addCollection.ControlBox = false;
-            addCollection.Show();
+            addCollectionForm = new AddCollection(this);
 
+            addCollectionForm.ControlBox = false;
+            addCollectionForm.Show();
         }
 
         public void clearGrid()
@@ -59,7 +63,6 @@ namespace Collector
             collectionPanel.Show();
 
             selectedCollection = collection;
-            
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView1.Update();
@@ -74,8 +77,22 @@ namespace Collector
 
             foreach (Attribute attr in collection.attributes)
             {
+                var columnSpec = new DataColumn
+                {
+                    DataType = typeof(String), // This is of type System.Type
+                    ColumnName = attr.name // This is of type string
+                };
+
+                if (attr.type == "date")
+                {
+                    columnSpec.DataType = typeof(DateTime);
+                    Console.WriteLine(attr.name);
+                }
+
+
+
                 fieldSelectionBox.Items.Add(attr.name);
-                dt.Columns.Add(attr.name);
+                dt.Columns.Add(columnSpec);
             }
 
             fieldSelectionBox.SelectedItem = collection.attributes[0].name;
@@ -88,7 +105,33 @@ namespace Collector
                 foreach (Attribute attr in collection.attributes)
                 {
                     String name = attr.name;
-                    row[name] = item[name];
+
+                    if (attr.type == "date")
+                    {
+
+                        String dateString = item[name];
+
+                        if (dateString == null)
+                        {
+                            DateTime date = DateTime.ParseExact("01.01.2000", "d.M.yyyy", CultureInfo.InvariantCulture);
+                            row[name] = date;
+                        }
+                        else
+                        {
+                            DateTime date = DateTime.ParseExact(dateString, "d.M.yyyy", CultureInfo.InvariantCulture);
+                            row[name] = date;
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        row[name] = item[name];
+
+                    }
+
+
                 }
 
                 dt.Rows.Add(row);
@@ -139,13 +182,13 @@ namespace Collector
             editCollection = new EditCollection(this, selectedCollection);
             editCollection.ControlBox = false;
             editCollection.Show();
-       
         }
 
         private void buttonAddItem_Click(object sender, EventArgs e)
         {
-           //show add item form
-
+            addItem = new AddItem(this, selectedCollection);
+            addItem.ControlBox = false;
+            addItem.Show();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -181,7 +224,9 @@ namespace Collector
                 return;
             }
 
-            //show edit item form
+            editItem = new EditItem(this, selectedCollection, selectedRow);
+            editItem.ControlBox = false;
+            editItem.Show();
         }
 
         private void buttonSearchCollection_Click(object sender, EventArgs e)
