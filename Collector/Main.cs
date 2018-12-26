@@ -25,14 +25,32 @@ namespace Collector
 
         private DatabaseController dbc;
 
+        private IEnumerable<CustomCollection> collectionList;
+
         public Main()
         {
             InitializeComponent();
             dbc = new DatabaseController();
 
             collectionPanel.Hide();
-
             updateCollectionList();
+
+            if(collectionList.Count() > 0)
+            {
+                Button defaultButton = flowLayoutPanel1.Controls[0] as Button;
+                selectedCollection = collectionList.First();
+                updateItemList(selectedCollection);
+            }
+        }
+
+        public void setSelectedCollection(CustomCollection selectedCollection)
+        {
+            this.selectedCollection = selectedCollection;
+        }
+
+        public IEnumerable<CustomCollection> getCollectionList()
+        {
+            return collectionList;
         }
 
         public void showInfoPanel()
@@ -44,7 +62,7 @@ namespace Collector
         private void button1_Click(object sender, EventArgs e)
         {
             addCollectionForm = new AddCollection(this);
-
+       
             addCollectionForm.ControlBox = false;
             addCollectionForm.Show();
         }
@@ -61,6 +79,7 @@ namespace Collector
         {
             infoPanel.Hide();
             collectionPanel.Show();
+            collectionLabel.Text = collection.aliase;
 
             selectedCollection = collection;
 
@@ -79,17 +98,14 @@ namespace Collector
             {
                 var columnSpec = new DataColumn
                 {
-                    DataType = typeof(String), // This is of type System.Type
-                    ColumnName = attr.name // This is of type string
+                    DataType = typeof(String), 
+                    ColumnName = attr.name 
                 };
 
                 if (attr.type == "date")
                 {
                     columnSpec.DataType = typeof(DateTime);
-                    Console.WriteLine(attr.name);
                 }
-
-
 
                 fieldSelectionBox.Items.Add(attr.name);
                 dt.Columns.Add(columnSpec);
@@ -121,19 +137,13 @@ namespace Collector
                             DateTime date = DateTime.ParseExact(dateString, "d.M.yyyy", CultureInfo.InvariantCulture);
                             row[name] = date;
                         }
-
-
-
                     }
                     else
                     {
                         row[name] = item[name];
 
                     }
-
-
                 }
-
                 dt.Rows.Add(row);
             }
 
@@ -150,7 +160,7 @@ namespace Collector
         {
             flowLayoutPanel1.Controls.Clear();
 
-            IEnumerable<CustomCollection> collectionList = dbc.getCollections();
+            collectionList = dbc.getCollections();
 
             foreach (CustomCollection collection in collectionList)
             {
@@ -193,6 +203,24 @@ namespace Collector
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            DataGridViewRow selectedRow = null;
+
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                selectedRow = dataGridView1.SelectedRows[0];
+            }
+
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Please select an item");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Do you want to delete this item?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
 
             List<ObjectId> itemsToDelete = new List<ObjectId>();
 
@@ -220,7 +248,7 @@ namespace Collector
 
             if (selectedRow == null)
             {
-                MessageBox.Show("Please select a row first");
+                MessageBox.Show("Please select an item");
                 return;
             }
 
@@ -234,6 +262,7 @@ namespace Collector
 
             if (fieldSelectionBox.SelectedItem == null || textboxSearch.Text == "")
             {
+                updateItemList(selectedCollection);
                 return;
             }
 

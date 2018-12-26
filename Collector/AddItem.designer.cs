@@ -50,9 +50,9 @@
             // 
             this.buttonAddItem.BackColor = System.Drawing.Color.White;
             this.buttonAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddItem.Location = new System.Drawing.Point(413, 320);
+            this.buttonAddItem.Location = new System.Drawing.Point(391, 320);
             this.buttonAddItem.Name = "buttonAddItem";
-            this.buttonAddItem.Size = new System.Drawing.Size(93, 23);
+            this.buttonAddItem.Size = new System.Drawing.Size(115, 23);
             this.buttonAddItem.TabIndex = 7;
             this.buttonAddItem.Text = "Add";
             this.buttonAddItem.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Location = new System.Drawing.Point(12, 320);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(93, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(115, 23);
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -101,7 +101,9 @@
             this.MaximumSize = new System.Drawing.Size(534, 394);
             this.MinimumSize = new System.Drawing.Size(534, 394);
             this.Name = "AddItem";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

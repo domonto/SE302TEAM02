@@ -38,6 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.collectionPanel = new System.Windows.Forms.Panel();
+            this.collectionLabel = new System.Windows.Forms.Label();
             this.fieldSelectionBox = new System.Windows.Forms.ComboBox();
             this.buttonEditItem = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.buttonEditCollection = new System.Windows.Forms.Button();
             this.buttonSearchCollection = new System.Windows.Forms.Button();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -53,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel4.SuspendLayout();
             this.collectionPanel.SuspendLayout();
+            this.infoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 450);
+            this.panel1.Size = new System.Drawing.Size(200, 461);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -78,7 +81,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 64);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 386);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 397);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -138,7 +141,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(687, 450);
+            this.panel2.Size = new System.Drawing.Size(784, 461);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -153,7 +156,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 61);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(687, 389);
+            this.dataGridView1.Size = new System.Drawing.Size(784, 400);
             this.dataGridView1.TabIndex = 1;
             // 
             // panel4
@@ -164,12 +167,13 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(687, 61);
+            this.panel4.Size = new System.Drawing.Size(784, 61);
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // collectionPanel
             // 
+            this.collectionPanel.Controls.Add(this.collectionLabel);
             this.collectionPanel.Controls.Add(this.fieldSelectionBox);
             this.collectionPanel.Controls.Add(this.buttonEditItem);
             this.collectionPanel.Controls.Add(this.buttonDelete);
@@ -180,14 +184,26 @@
             this.collectionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.collectionPanel.Location = new System.Drawing.Point(0, 0);
             this.collectionPanel.Name = "collectionPanel";
-            this.collectionPanel.Size = new System.Drawing.Size(687, 61);
+            this.collectionPanel.Size = new System.Drawing.Size(784, 61);
             this.collectionPanel.TabIndex = 7;
+            // 
+            // collectionLabel
+            // 
+            this.collectionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.collectionLabel.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.collectionLabel.ForeColor = System.Drawing.Color.White;
+            this.collectionLabel.Location = new System.Drawing.Point(6, 20);
+            this.collectionLabel.Name = "collectionLabel";
+            this.collectionLabel.Size = new System.Drawing.Size(85, 24);
+            this.collectionLabel.TabIndex = 2;
+            this.collectionLabel.Text = "name";
+            this.collectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fieldSelectionBox
             // 
             this.fieldSelectionBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fieldSelectionBox.FormattingEnabled = true;
-            this.fieldSelectionBox.Location = new System.Drawing.Point(431, 9);
+            this.fieldSelectionBox.Location = new System.Drawing.Point(515, 10);
             this.fieldSelectionBox.Name = "fieldSelectionBox";
             this.fieldSelectionBox.Size = new System.Drawing.Size(170, 21);
             this.fieldSelectionBox.TabIndex = 8;
@@ -198,8 +214,8 @@
             this.buttonEditItem.FlatAppearance.BorderSize = 0;
             this.buttonEditItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonEditItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEditItem.Location = new System.Drawing.Point(179, 21);
+            this.buttonEditItem.ForeColor = System.Drawing.Color.White;
+            this.buttonEditItem.Location = new System.Drawing.Point(270, 21);
             this.buttonEditItem.Name = "buttonEditItem";
             this.buttonEditItem.Size = new System.Drawing.Size(68, 24);
             this.buttonEditItem.TabIndex = 7;
@@ -209,12 +225,12 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(138)))), ((int)(((byte)(236)))));
+            this.buttonDelete.BackColor = System.Drawing.Color.IndianRed;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonDelete.Location = new System.Drawing.Point(253, 21);
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(344, 21);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(68, 24);
             this.buttonDelete.TabIndex = 6;
@@ -228,8 +244,8 @@
             this.buttonAddItem.FlatAppearance.BorderSize = 0;
             this.buttonAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddItem.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonAddItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonAddItem.Location = new System.Drawing.Point(105, 21);
+            this.buttonAddItem.ForeColor = System.Drawing.Color.White;
+            this.buttonAddItem.Location = new System.Drawing.Point(196, 20);
             this.buttonAddItem.Name = "buttonAddItem";
             this.buttonAddItem.Size = new System.Drawing.Size(68, 24);
             this.buttonAddItem.TabIndex = 2;
@@ -240,19 +256,19 @@
             // textboxSearch
             // 
             this.textboxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textboxSearch.Location = new System.Drawing.Point(431, 36);
+            this.textboxSearch.Location = new System.Drawing.Point(515, 37);
             this.textboxSearch.Name = "textboxSearch";
             this.textboxSearch.Size = new System.Drawing.Size(170, 20);
             this.textboxSearch.TabIndex = 4;
             // 
             // buttonEditCollection
             // 
-            this.buttonEditCollection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(138)))), ((int)(((byte)(236)))));
+            this.buttonEditCollection.BackColor = System.Drawing.Color.White;
             this.buttonEditCollection.FlatAppearance.BorderSize = 0;
             this.buttonEditCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditCollection.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonEditCollection.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonEditCollection.Location = new System.Drawing.Point(6, 21);
+            this.buttonEditCollection.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonEditCollection.Location = new System.Drawing.Point(97, 20);
             this.buttonEditCollection.Name = "buttonEditCollection";
             this.buttonEditCollection.Size = new System.Drawing.Size(93, 24);
             this.buttonEditCollection.TabIndex = 3;
@@ -268,7 +284,7 @@
             this.buttonSearchCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearchCollection.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonSearchCollection.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonSearchCollection.Location = new System.Drawing.Point(607, 9);
+            this.buttonSearchCollection.Location = new System.Drawing.Point(691, 10);
             this.buttonSearchCollection.Name = "buttonSearchCollection";
             this.buttonSearchCollection.Size = new System.Drawing.Size(68, 47);
             this.buttonSearchCollection.TabIndex = 5;
@@ -278,21 +294,36 @@
             // 
             // infoPanel
             // 
+            this.infoPanel.Controls.Add(this.label2);
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPanel.Location = new System.Drawing.Point(0, 0);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(687, 61);
+            this.infoPanel.Size = new System.Drawing.Size(784, 61);
             this.infoPanel.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(6, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(330, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "This place looks empty, start by creating a collection";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 450);
+            this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Collector";
             this.panel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -302,6 +333,8 @@
             this.panel4.ResumeLayout(false);
             this.collectionPanel.ResumeLayout(false);
             this.collectionPanel.PerformLayout();
+            this.infoPanel.ResumeLayout(false);
+            this.infoPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -326,6 +359,8 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ComboBox fieldSelectionBox;
         private System.Windows.Forms.Button buttonEditItem;
+        private System.Windows.Forms.Label collectionLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 

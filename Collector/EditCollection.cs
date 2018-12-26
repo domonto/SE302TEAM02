@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -126,6 +127,12 @@ namespace Collector
             };
             fieldToAdd.desc = fieldToAdd.name + " (" + fieldToAdd.type + ")";
 
+            if (!Regex.IsMatch(fieldToAdd.name, @"^[\p{L}]+$"))
+            {
+                MessageBox.Show("Field name can only have letters.", "Error Editing Collection");
+                return;
+            }
+
             foreach (Field field in listBox1.Items)
             {
                 if (field.name == fieldToAdd.name)
@@ -146,11 +153,26 @@ namespace Collector
 
         private void buttonDeleteCollection_Click(object sender, EventArgs e)
         {
+
+            DialogResult result = MessageBox.Show("Do you want to delete this collection?", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
             dbc.deleteCollection(customCol);
 
             mainForm.showInfoPanel();
             mainForm.updateCollectionList();
             mainForm.clearGrid();
+
+            IEnumerable<CustomCollection> collectionList = mainForm.getCollectionList();
+            if (collectionList.Count() > 0)
+            {
+                mainForm.setSelectedCollection(collectionList.First());
+                mainForm.updateItemList(collectionList.First());
+            }
+
             this.Close();
         }
     }

@@ -63,19 +63,18 @@
             this.panel1.Controls.Add(this.textCollectionName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(541, 405);
+            this.panel1.Size = new System.Drawing.Size(407, 336);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonRemove
             // 
+            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonRemove.Location = new System.Drawing.Point(91, 212);
-            this.buttonRemove.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRemove.Location = new System.Drawing.Point(147, 255);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(97, 28);
+            this.buttonRemove.Size = new System.Drawing.Size(73, 23);
             this.buttonRemove.TabIndex = 12;
             this.buttonRemove.Text = "Remove";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -86,10 +85,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(96, 279);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(72, 227);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 23);
+            this.label5.Size = new System.Drawing.Size(69, 20);
             this.label5.TabIndex = 11;
             this.label5.Text = "field type:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -99,21 +97,20 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(85, 249);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(64, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 23);
+            this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "field name:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // buttonAddField
             // 
+            this.buttonAddField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddField.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonAddField.Location = new System.Drawing.Point(431, 314);
-            this.buttonAddField.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddField.Location = new System.Drawing.Point(323, 255);
             this.buttonAddField.Name = "buttonAddField";
-            this.buttonAddField.Size = new System.Drawing.Size(97, 28);
+            this.buttonAddField.Size = new System.Drawing.Size(73, 23);
             this.buttonAddField.TabIndex = 9;
             this.buttonAddField.Text = "Add";
             this.buttonAddField.UseVisualStyleBackColor = true;
@@ -122,18 +119,16 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(196, 281);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(147, 228);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(331, 24);
+            this.comboBox1.Size = new System.Drawing.Size(249, 21);
             this.comboBox1.TabIndex = 8;
             // 
             // textFieldName
             // 
-            this.textFieldName.Location = new System.Drawing.Point(196, 249);
-            this.textFieldName.Margin = new System.Windows.Forms.Padding(4);
+            this.textFieldName.Location = new System.Drawing.Point(147, 202);
             this.textFieldName.Name = "textFieldName";
-            this.textFieldName.Size = new System.Drawing.Size(331, 22);
+            this.textFieldName.Size = new System.Drawing.Size(249, 20);
             this.textFieldName.TabIndex = 7;
             // 
             // label3
@@ -141,10 +136,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(40, 91);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(30, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 23);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Collection fields:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -152,11 +146,9 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(196, 91);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.listBox1.Location = new System.Drawing.Point(147, 74);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(331, 148);
+            this.listBox1.Size = new System.Drawing.Size(249, 121);
             this.listBox1.TabIndex = 5;
             // 
             // label2
@@ -164,23 +156,21 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(16, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 32);
+            this.label2.Size = new System.Drawing.Size(165, 27);
             this.label2.TabIndex = 4;
             this.label2.Text = "Create Collection";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // buttonCreateCollection
             // 
-            this.buttonCreateCollection.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonCreateCollection.FlatAppearance.BorderSize = 0;
+            this.buttonCreateCollection.BackColor = System.Drawing.Color.White;
+            this.buttonCreateCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCreateCollection.ForeColor = System.Drawing.Color.Black;
-            this.buttonCreateCollection.Location = new System.Drawing.Point(428, 364);
-            this.buttonCreateCollection.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCreateCollection.Location = new System.Drawing.Point(281, 301);
             this.buttonCreateCollection.Name = "buttonCreateCollection";
-            this.buttonCreateCollection.Size = new System.Drawing.Size(100, 28);
+            this.buttonCreateCollection.Size = new System.Drawing.Size(115, 23);
             this.buttonCreateCollection.TabIndex = 3;
             this.buttonCreateCollection.Text = "Create";
             this.buttonCreateCollection.UseVisualStyleBackColor = false;
@@ -188,13 +178,13 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonCancel.BackColor = System.Drawing.Color.White;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonCancel.ForeColor = System.Drawing.Color.Black;
-            this.buttonCancel.Location = new System.Drawing.Point(16, 366);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.Location = new System.Drawing.Point(12, 301);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(100, 28);
+            this.buttonCancel.Size = new System.Drawing.Size(115, 23);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -205,33 +195,32 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(36, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(27, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 23);
+            this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Collection name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textCollectionName
             // 
-            this.textCollectionName.Location = new System.Drawing.Point(196, 59);
-            this.textCollectionName.Margin = new System.Windows.Forms.Padding(4);
+            this.textCollectionName.Location = new System.Drawing.Point(147, 48);
             this.textCollectionName.Name = "textCollectionName";
-            this.textCollectionName.Size = new System.Drawing.Size(331, 22);
+            this.textCollectionName.Size = new System.Drawing.Size(249, 20);
             this.textCollectionName.TabIndex = 0;
             // 
             // AddCollection
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 405);
+            this.ClientSize = new System.Drawing.Size(407, 336);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximumSize = new System.Drawing.Size(559, 452);
-            this.MinimumSize = new System.Drawing.Size(559, 452);
+            this.MaximumSize = new System.Drawing.Size(423, 375);
+            this.MinimumSize = new System.Drawing.Size(423, 375);
             this.Name = "AddCollection";
-            this.Text = "Form2";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

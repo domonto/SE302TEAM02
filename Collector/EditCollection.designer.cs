@@ -67,6 +67,7 @@
             // 
             // buttonDeleteCollection
             // 
+            this.buttonDeleteCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteCollection.Location = new System.Drawing.Point(281, 14);
             this.buttonDeleteCollection.Name = "buttonDeleteCollection";
             this.buttonDeleteCollection.Size = new System.Drawing.Size(115, 23);
@@ -77,8 +78,9 @@
             // 
             // buttonRemove
             // 
+            this.buttonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonRemove.Location = new System.Drawing.Point(68, 146);
+            this.buttonRemove.Location = new System.Drawing.Point(147, 228);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(73, 23);
             this.buttonRemove.TabIndex = 12;
@@ -112,6 +114,7 @@
             // 
             // buttonAddField
             // 
+            this.buttonAddField.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddField.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonAddField.Location = new System.Drawing.Point(323, 228);
             this.buttonAddField.Name = "buttonAddField";
@@ -170,8 +173,8 @@
             // 
             // buttonSaveCollection
             // 
-            this.buttonSaveCollection.BackColor = System.Drawing.Color.Gainsboro;
-            this.buttonSaveCollection.FlatAppearance.BorderSize = 0;
+            this.buttonSaveCollection.BackColor = System.Drawing.Color.White;
+            this.buttonSaveCollection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveCollection.ForeColor = System.Drawing.Color.Black;
             this.buttonSaveCollection.Location = new System.Drawing.Point(281, 271);
             this.buttonSaveCollection.Name = "buttonSaveCollection";
@@ -183,7 +186,8 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonCancel.BackColor = System.Drawing.Color.White;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonCancel.ForeColor = System.Drawing.Color.Black;
             this.buttonCancel.Location = new System.Drawing.Point(12, 271);
@@ -203,7 +207,9 @@
             this.MaximumSize = new System.Drawing.Size(424, 345);
             this.MinimumSize = new System.Drawing.Size(424, 345);
             this.Name = "EditCollection";
-            this.Text = "EditCollection";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

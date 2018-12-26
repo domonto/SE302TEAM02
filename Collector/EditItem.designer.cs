@@ -58,7 +58,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Location = new System.Drawing.Point(12, 321);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(93, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(115, 23);
             this.buttonCancel.TabIndex = 12;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -68,9 +68,9 @@
             // 
             this.buttonSaveItem.BackColor = System.Drawing.Color.White;
             this.buttonSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaveItem.Location = new System.Drawing.Point(413, 321);
+            this.buttonSaveItem.Location = new System.Drawing.Point(391, 321);
             this.buttonSaveItem.Name = "buttonSaveItem";
-            this.buttonSaveItem.Size = new System.Drawing.Size(93, 23);
+            this.buttonSaveItem.Size = new System.Drawing.Size(115, 23);
             this.buttonSaveItem.TabIndex = 11;
             this.buttonSaveItem.Text = "Save";
             this.buttonSaveItem.UseVisualStyleBackColor = false;
@@ -92,6 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(518, 355);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonCancel);
@@ -100,7 +101,9 @@
             this.MaximumSize = new System.Drawing.Size(534, 394);
             this.MinimumSize = new System.Drawing.Size(534, 394);
             this.Name = "EditItem";
-            this.Text = "EditItem";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

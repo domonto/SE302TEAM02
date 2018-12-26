@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -42,6 +43,12 @@ namespace Collector
                 MessageBox.Show("Collection name is required.", "Error Creating Collection");
                 return;
             }
+            if(!Regex.IsMatch(textCollectionName.Text, @"^[\p{L}]+$"))
+            {
+                MessageBox.Show("Collection name can only have letters.", "Error Creating Collection");
+                return;
+            }
+
 
             IEnumerable<CustomCollection> allCollections = dbc.getCollections();
 
@@ -84,6 +91,8 @@ namespace Collector
             dbc.createCollection(newCollectionName, attributes);
 
             mainForm.updateCollectionList();
+            mainForm.updateItemList(customCollection);
+            mainForm.setSelectedCollection(customCollection);
             this.Close();
         }
 
@@ -131,6 +140,12 @@ namespace Collector
                 desc = "",
             };
             fieldToAdd.desc = fieldToAdd.name + " (" + fieldToAdd.type + ")";
+
+            if (!Regex.IsMatch(fieldToAdd.name, @"^[\p{L}]+$"))
+            {
+                MessageBox.Show("Field name can only have letters.", "Error Creating Collection");
+                return;
+            }
 
             foreach (Field field in listBox1.Items)
             {
